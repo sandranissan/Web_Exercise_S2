@@ -1,0 +1,52 @@
+﻿@page
+@model Scenario_2_Web_Application_Sandra_Nissan.Pages.Employees.EmployeeListModel
+@{
+}
+
+<br>
+<h2>List of Employees</h2>
+<a class='btn btn-primary btn-sm' href='./AddNewEmployee'>Add New Employee</a>
+
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>Employee ID</th>
+			<th>Firstname</th>
+			<th>Lastname</th>
+			<th>Salary</th>
+			<th>IsManager</th>
+			<th>isCEO</th>
+			<th>Manager ID</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach(var item in Model.listEmployees)
+		{
+			<tr>
+				<td>@item.EmployeeId</td>
+				<td>@item.FirstName</td>
+				<td>@item.LastName</td>
+				<td>@item.Salary</td>
+				<td>@item.IsManager</td>
+				<td>@item.isCEO</td>
+				<td>@item.ManagerId</td>
+				<td>
+
+					<a class="btn btn-primary btn-sm" asp-area="" asp-page="/Employees/Edit?id=@item.EmployeeId">Edit</a>
+					<a class="btn btn-danger btn-sm" asp-area="" asp-page="/Employees/Delete?id=@item.EmployeeId">Delete</a>
+
+
+				</td>
+
+			</tr>
+
+			
+		}
+
+
+	</tbody>
+	
+
+
+</table>
