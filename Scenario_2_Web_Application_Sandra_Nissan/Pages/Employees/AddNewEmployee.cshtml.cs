@@ -18,7 +18,7 @@ namespace Scenario_2_Web_Application_Sandra_Nissan.Pages.Employees
 
 		public void OnPost() {
 		
-	       	employeeInfo.FirstName= Request.Form["firtName"];
+	       	employeeInfo.FirstName= Request.Form["firstName"];
 			employeeInfo.LastName = Request.Form["lastName"];
 
 			if (int.TryParse(Request.Form["rank"], out employeeInfo.Rank))
